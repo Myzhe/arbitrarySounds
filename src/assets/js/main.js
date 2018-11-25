@@ -4,7 +4,7 @@ if (!navigator.getUserMedia) {
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
   }
 
-document.getElementsByTagName("input")[1].addEventListener("change", function(){document.getElementById("beat-p").innerHTML=document.getElementsByTagName("input")[1].value;});
+document.getElementsByTagName("input")[0].addEventListener("change", function(){document.getElementById("beat-p").innerHTML=document.getElementsByTagName("input")[0].value;});
 
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
@@ -66,20 +66,10 @@ class SoundGenerator {
         }, time, this.output);
     }
 }
-document.getElementsByTagName("input")[0].addEventListener("change", function(){
-   if (document.getElementsByTagName("input")[0].checked) {
-      let _bpm = document.getElementsByTagName("input")[1].value;
-      let _beat1 = document.getElementsByTagName("input")[2].value;
-      let _beat2 = document.getElementsByTagName("input")[3].value;
-      console.log(_bpm,_beat1,_beat2);
-   }
-});
-if (!document.getElementsByTagName("input")[0].checked) {
-   let _bpm = document.getElementsByTagName("input")[1].value;
-   let _beat1 = document.getElementsByTagName("input")[2].value;
-   let _beat2 = document.getElementsByTagName("input")[3].value;
-   console.log(_bpm,_beat1,_beat2);
-}
+
+
+    let _bpm = document.getElementsByTagName("input")[0].value;
+    
 
 // Testing
 var output = new AudioOutput();
