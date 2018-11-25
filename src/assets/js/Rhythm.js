@@ -1,17 +1,18 @@
 //
 
 class Rhythm {
-    constructor(track, harmony, meter, bpm) {
+    constructor(track, beat, bpm) {
 
         //Track-Objekt wird übernommen.
         this.track = track;
 
         //Taktart, BPM und Standardeinheit wird aus Timing-Klasse übernommen.
-        this.meter = meter[1];
+        this.metre = beat[1];
         this.bpm = bpm;
         this.unit = (this.bpm/60)*1000;
 
         //Hole Töne aus Harmonie-Objekt
+        this.harmony = track.harmony;
         this.tones = this.harmony.getTones();
 
         //Mögliche Spiellängen für die Töne
@@ -23,7 +24,7 @@ class Rhythm {
 
         this.count = 0;
 
-        if (this.count < this.meter[1]) {
+        if (this.count < this.metre) {
             setInterval(() => {this.playRhythm(); x++;}, this.unit);
         }
     }

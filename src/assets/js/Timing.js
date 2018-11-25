@@ -1,8 +1,8 @@
 
 class Timing {
-   constructor(rhythm, bpm, beat) {
-      this.bpm = bpm;
-      this.beat = beat;
-      setInterval(rythm, this.bpm/this.beat[1]/60*1000)
+   constructor(rhythm) {
+      this.bpm = rhythm.bpm;
+      this.metre = rhythm.metre;
+      setInterval(rhythm.checkEveryBeat, this.bpm/this.metre/60*1000);
    }
 }
