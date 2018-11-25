@@ -22,18 +22,24 @@ class AudioOutput {
 
 class SoundGenerator {
 
-    constructor(output) {
+    constructor(output, time) {
         this.output = output.context.createOscillator();
         this.output.start();
     }
 
     setFrequency(f) {
-        this.output.frequency.setValueAtTime(f, output.context.currentTime); 
+        this.output.frequency.setValueAtTime(f, this.output.context.currentTime);
+    }
+
+    terminate(time) {
+        setTimeout(function(note){
+            note.stop(); // possible bug?
+        }, time, this.output);
     }
 }
 
 // Testing
 var output = new AudioOutput();
-var input = new SoundGenerator(output);
+var track = new Track(output);
 
-output.setInput(input);
+track.playTone([220, 440], 1000);
