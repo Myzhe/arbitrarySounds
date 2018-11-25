@@ -5,10 +5,9 @@
    <head>
        <title>Arbitrary Sounds</title>
 
-       <link href="styles.css" type="text/css" rel="stylesheet">
+       <link href="assets/css/main.css" type="text/css" rel="stylesheet">
 
-       <script type="text/javascript" src="assets/js/main.js"></script>
-       <script type="text/javascript" src="assets/js/Timing.js" />
+       <script type="text/javascript" src="assets/js/Timing.js" ></script>
 
        </script>
        <meta name="author" content="Kiru Spreu, Luis Geißler, Paul Kroker, Ben Schaper, Hendrik Wölert und Max Zimmermann">
@@ -18,7 +17,16 @@
    </head>
 
    <body>
-
+      <div class="sliders">
+         <p>Beats Per Minute</p></br>
+         <input type="range" name="bpm" min="60" max="200" value="130" /></br>
+         <p id="beat-p"></p>
+         <p>Beat</p></br>
+         <input type="text" name="beat-numerator" size="5" />
+         <hr width="50" align="left">
+         <input type="text" name="beat-denominator" size="5">
+         <script type="text/javascript" src="assets/js/main.js" ></script>
+      </div>
    </body>
 
 </html>
