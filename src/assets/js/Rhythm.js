@@ -1,8 +1,8 @@
-// 
+//
 
-class rhythm {
+class Rhythm {
     constructor(track, harmony, meter, bpm) {
-        
+
         //Track-Objekt wird übernommen.
         this.track = track;
 
@@ -20,11 +20,11 @@ class rhythm {
 
     checkEveryBeat() {
         //Checke für die gegebene Anzahl von Schlägen, ob und was für ein Ton gespielt wird.
-        
+
         this.count = 0;
-        
+
         if (this.count < this.meter[1]) {
-            setInterval(() => {this.playRhythm(); x++;}, this.unit);   
+            setInterval(() => {this.playRhythm(); x++;}, this.unit);
         }
     }
 
@@ -33,8 +33,7 @@ class rhythm {
     }
 
     playRhythm() {
-        
-        track.playTone(this.tones, this.randomLength);
+        this.track.playTone(this.tones, this.randomLength);
     }
 
 
