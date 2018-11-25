@@ -10,6 +10,7 @@ class Rhythm {
         this.metre = beat[1];
         this.bpm = bpm;
         this.unit = (this.bpm/60)*1000;
+        console.log(this.unit);
 
         //Hole Töne aus Harmonie-Objekt
         this.harmony = track.harmony;
@@ -17,24 +18,22 @@ class Rhythm {
 
         //Mögliche Spiellängen für die Töne
         this.lengths = [0, 0.25*this.unit, 0.5*this.unit, this.unit, 2*this.unit];
+
+        this.checkEveryBeat.bind(this);
     }
 
-    checkEveryBeat() {
+    checkEveryBeat(self = this) {
         //Checke für die gegebene Anzahl von Schlägen, ob und was für ein Ton gespielt wird.
-
-        this.count = 0;
-
-        if (this.count < this.metre) {
-            setInterval(() => {this.playRhythm(); x++;}, this.unit);
+        setInterval(self.playRhythm, self.unit, self);
         }
+    
+
+    randomLength(self = this) {
+        return self.lengths[Math.floor(Math.random()*4)];
     }
 
-    randomLength() {
-        return this.lengths[Math.floor(Math.random()*4)];
-    }
-
-    playRhythm() {
-        this.track.playTone(this.tones, this.randomLength);
+    playRhythm(self = this) {
+        self.track.playTone(self.tones, self.randomLength(self));
     }
 
 
