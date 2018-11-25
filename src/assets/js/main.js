@@ -69,4 +69,4 @@ class SoundGenerator {
 var output = new AudioOutput();
 var track = new Track(output);
 
-track.playTone([220, 440], 1000);
+
