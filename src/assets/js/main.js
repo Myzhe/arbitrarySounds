@@ -6,7 +6,34 @@ if (!navigator.getUserMedia) {
 
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
+function setup() {
+    createCanvas(800, 800);
+    ball1 = new Ball();
+}
 
+function draw() {
+    background(220);
+    ball1.draw();
+}
+
+class Ball {
+    constructor() {
+        this.x = width/2;
+        this.y = height/2;
+        this.size = 40;
+    }
+
+    draw() {
+        fill(0);
+        noStroke();
+        ellipse(this.x, this.y, this.size);
+    }
+}
+
+function mouseDragged() {
+    ball1.x = mouseX;
+    ball1.y = mouseY;
+}
 
 // Audio and Sound code
 class AudioOutput {

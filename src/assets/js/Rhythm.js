@@ -9,7 +9,7 @@ class Rhythm {
         //Taktart, BPM und Standardeinheit wird aus Timing-Klasse übernommen.
         this.meter = meter[1];
         this.bpm = bpm;
-        this.unit = 60000/this.bpm;
+        this.unit = (this.bpm/60)*1000;
 
         //Hole Töne aus Harmonie-Objekt
         this.tones = this.harmony.getTones();
