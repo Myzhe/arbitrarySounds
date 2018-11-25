@@ -3,8 +3,8 @@ class Track {
     constructor(output) {
         this.output = output;
         this.harmony = new Harmony();
-        this.rhythm = new Rhythm(this);
-        this.timing = new Timing(this.rhythm, this.harmony, beat, bpm);
+        this.rhythm = new Rhythm(this, [4, 4], 120);
+        this.timing = new Timing(this.rhythm);
     }
 
     playTone(tones, time) {
