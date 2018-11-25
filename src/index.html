@@ -11,7 +11,6 @@
         <script type="text/javascript" src="assets/js/Rhythm.js" ></script>
         <script type="text/javascript" src="assets/js/Harmony.js"></script>
         <script type="text/javascript" src="assets/js/Track.js"></script>
-        <script type="text/javascript" src="assets/js/main.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js" ></script>
 
 
@@ -23,16 +22,18 @@
    </head>
 
    <body>
+      <span>Manual </span><input type="checkbox" id="toggle" value="false"></br>
       <div class="sliders">
          <p>Beats Per Minute</p></br>
          <input type="range" name="bpm" min="60" max="200" value="130" /></br>
          <p id="beat-p"></p>
-         <p>Beat</p></br>
-         <input type="text" name="beat-numerator" size="5" />
-         <hr width="50" align="left">
-         <input type="text" name="beat-denominator" size="5">
-         <script type="text/javascript" src="assets/js/main.js" ></script>
       </div>
+         <p>Beat</p></br>
+         <input type="text" name="beat-numerator" size="5" value="4"/>
+         <hr width="50" align="left">
+         <input type="text" name="beat-denominator" size="5" value="4">
+         <script type="text/javascript" src="assets/js/main.js" ></script>
+         </br></br>
    </body>
 
 </html>
